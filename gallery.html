@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Anuradha Coirs &amp; Fibers</title>
+  <link rel="icon" href="assets/images/logo/favicon.png" type="image/png">
+  <meta name="description"
+    content="Explore Anuradha Coirs & Fibers' photo gallery — products, manufacturing, and infrastructure.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+  <!-- Custom Translate Dropdown Styling -->
+  <link rel="stylesheet" href="assets/translate.css">
+  <!-- jQuery + Isotope + Magnific -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+
+  <link rel="stylesheet" href="assets/css/gallery.css">
+  <!-- Interactive Chatbot Stylesheet -->
+  <link rel="stylesheet" href="assets/css/chatbot.css">
+</head>
+
+<body>
+
+  <!-- ════════════ TOP BAR ════════════ -->
+  <div class="topbar d-none d-md-block">
+    <div class="container-fluid px-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <i class="bi bi-envelope-fill me-1" style="color:var(--gold);"></i>
+          <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
+            target="_blank" style="color:rgba(255,255,255,0.75);" title="WhatsApp" aria-label="WhatsApp"><i
+              class="bi bi-whatsapp"></i></a>
+          <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank"
+            style="color:rgba(255,255,255,0.75);"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank"
+            style="color:rgba(255,255,255,0.75);"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ NAVBAR ════════════ -->
+  <div class="main-nav">
+    <div class="container-fluid px-4">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/images/logo/mainlogo.png" alt="Anuradha Coirs &amp; Fibers" loading="lazy">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+          aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About <i class="bi bi-chevron-down nav-chevron"></i>
+              </a>
+              <ul class="dropdown-menu custom-nav-dropdown" aria-labelledby="aboutDropdown">
+                <li>
+                  <a class="dropdown-item" href="about.html">
+                    <i class="bi bi-building"></i>
+                    <div>
+                      <span class="dropdown-item-title">About Us</span>
+                      <span class="dropdown-item-desc">Our company history, mission &amp; global reach</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="aboutcoir.html">
+                    <i class="bi bi-flower1"></i>
+                    <div>
+                      <span class="dropdown-item-title">About Coir</span>
+                      <span class="dropdown-item-desc">Learn about natural coir fiber &amp; eco benefits</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="product.html" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Products <i class="bi bi-chevron-down nav-chevron"></i>
+              </a>
+              <div class="dropdown-menu products-mega-dropdown" aria-labelledby="productsDropdown">
+                <div class="products-mega-grid">
+                  
+                  <!-- Col 1: Coco Peat & Substrates -->
+                  <div class="products-mega-col">
+                    <div class="products-mega-col-title"><i class="bi bi-box-seam"></i> Coco Peat &amp; Substrates</div>
+                    <a href="product-detail.html?id=p002" class="products-mega-item">
+                      <img src="assets/images/Products/cocopeat_block.jpeg" alt="Coco Peat 5 KG Block">
+                      <div>
+                        <span class="products-mega-item-title">Coco Peat 5 KG Block</span>
+                        <span class="products-mega-item-code">AC-02 • High Expansion</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p003" class="products-mega-item">
+                      <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Bricks 650g">
+                      <div>
+                        <span class="products-mega-item-title">Coco Peat Bricks 650g</span>
+                        <span class="products-mega-item-code">AC-03 • Retail Ready</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p006" class="products-mega-item">
+                      <img src="assets/images/Products/cocoHuskChips.jpeg" alt="Coco Husk Chips">
+                      <div>
+                        <span class="products-mega-item-title">Coco Husk Chips</span>
+                        <span class="products-mega-item-code">AC-06 • Orchid Substrate</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p007" class="products-mega-item">
+                      <img src="assets/images/Products/cocoPeatCoin.jpeg" alt="Coco Coins & Discs">
+                      <div>
+                        <span class="products-mega-item-title">Coco Coins &amp; Discs</span>
+                        <span class="products-mega-item-code">AC-07 • Seed Starter</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Col 2: Grow Bags & Fibre -->
+                  <div class="products-mega-col">
+                    <div class="products-mega-col-title"><i class="bi bi-flower1"></i> Grow Bags &amp; Coir Fibre</div>
+
+                    <!-- Coco Grow Bags Sub-Group Card -->
+                    <div class="mega-subgroup">
+                      <div class="mega-subgroup-header">
+                        <span class="mega-subgroup-title"><i class="bi bi-box-seam"></i> Coco Grow Bags</span>
+                        <span class="subgroup-badge">2 Products</span>
+                      </div>
+                      <div class="mega-subgroup-items">
+                        <a href="product-detail.html?id=p004" class="products-mega-item">
+                          <img src="assets/images/Products/coirGrowBag.jpeg" alt="Cocopeat Grow Bag Slab">
+                          <div>
+                            <span class="products-mega-item-title">Cocopeat Grow Bag Slab</span>
+                            <span class="products-mega-item-code">AC-04 / AC-3A • Grade AC-3A</span>
+                          </div>
+                        </a>
+                        <a href="product-detail.html?id=p005" class="products-mega-item">
+                          <img src="assets/images/Products/openTopGrowBag.jpg" alt="Cocopeat Open Top Grow Bag">
+                          <div>
+                            <span class="products-mega-item-title">Cocopeat Open Top Grow Bag</span>
+                            <span class="products-mega-item-code">AC-05 • Volume 5–36L</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Coir Fibre -->
+                    <a href="product-detail.html?id=p001" class="products-mega-item">
+                      <img src="assets/images/Products/coirfiberNew.jpeg" alt="Coir Fibre">
+                      <div>
+                        <span class="products-mega-item-title">Coir Fibre (Raw &amp; Baled)</span>
+                        <span class="products-mega-item-code">AC-01 • Industrial Bales</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Col 3: Coconuts & Seedlings -->
+                  <div class="products-mega-col">
+                    <div class="products-mega-col-title"><i class="bi bi-tree-fill"></i> Fresh Coconuts &amp; Seedlings</div>
+                    <a href="product-detail.html?id=p008" class="products-mega-item">
+                      <img src="assets/images/Products/semiHuskedCoconut.jpeg" alt="Semi Husked Coconut">
+                      <div>
+                        <span class="products-mega-item-title">Semi Husked Coconut</span>
+                        <span class="products-mega-item-code">AC-08 • Long Shelf Life</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p009" class="products-mega-item">
+                      <img src="assets/images/Products/fullyHuskedCoconut.jpeg" alt="Fully Husked Coconut">
+                      <div>
+                        <span class="products-mega-item-title">Fully Husked Coconut</span>
+                        <span class="products-mega-item-code">AC-09 • Ready Culinary</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p010" class="products-mega-item">
+                      <img src="assets/images/Products/TenderCoconut.jpeg" alt="Tender Coconut">
+                      <div>
+                        <span class="products-mega-item-title">Tender Green Coconut</span>
+                        <span class="products-mega-item-code">AC-10 • Hydration Water</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p011" class="products-mega-item">
+                      <img src="assets/images/Products/NurserySeedlings.jpeg" alt="Coconut Seedlings">
+                      <div>
+                        <span class="products-mega-item-title">Coconut Seedlings</span>
+                        <span class="products-mega-item-code">AC-11 • High-Yield Palms</span>
+                      </div>
+                    </a>
+                  </div>
+
+                </div>
+
+                <!-- Footer Bar -->
+                <div class="products-mega-footer">
+                  <span style="font-size:0.78rem;color:#556b62;"><i class="bi bi-patch-check-fill" style="color:#b8975a;"></i> Export Quality • ISO Certified • Global Shipping</span>
+                  <a href="product.html">View All Products <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
+            <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            <li class="nav-item nav-actions-item">
+              <div class="nav-actions-wrap">
+                <div id="google_translate_element"></div>
+                <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products." target="_blank" rel="noopener noreferrer" class="nav-inquire-btn"><i class="bi bi-whatsapp"></i> Inquire Now</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- ════════════ PAGE HERO ════════════ -->
+  <div class="page-hero">
+    <div class="hero-blob b1"></div>
+    <div class="hero-blob b2"></div>
+    <div class="page-hero-content">
+      <span class="eyebrow-pill"><i class="bi bi-stars"></i> Visual Showcase</span>
+      <h1>Product <em>Gallery</em></h1>
+      <p>Explore the natural elegance and versatility of coir — every image reflects the eco-friendly charm and
+        durability our products are renowned for.</p>
+    </div>
+    <div class="scroll-cue"><i class="bi bi-chevron-down"></i></div>
+  </div>
+
+  <!-- ════════════ FLOATING BREADCRUMB ════════════ -->
+  <div class="breadcrumb-float-wrap">
+    <div class="breadcrumb-bar">
+      <ol>
+        <li><a href="index.html"><i class="bi bi-house-door-fill"></i> Home</a></li>
+        <li class="sep"><i class="bi bi-chevron-right"></i></li>
+        <li class="current">Gallery</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ════════════ COVERFLOW SHOWCASE ════════════ -->
+  <section class="showcase-section">
+    <div class="container">
+      <div class="text-center mb-2">
+        <span class="eyebrow">Featured Showcase</span>
+        <h2 style="font-family:var(--font-head);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--forest);">
+          Hung Fresh Off the <em style="color:var(--gold);font-style:italic;">Line</em>
+        </h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="coverflow-wrap" id="coverflowWrap">
+        <button class="cf-arrow cf-prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+        <div class="rope-line"></div>
+        <div class="coverflow-track" id="coverflowTrack"></div>
+        <button class="cf-arrow cf-next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+      </div>
+
+      <div class="cf-caption">
+        <span id="cfLabel">Loading&hellip;</span>
+        <span id="cfBadge" class="cf-badge">Products</span>
+      </div>
+      <div class="cf-dots" id="cfDots"></div>
+    </div>
+  </section>
+
+  <!-- ════════════ GALLERY SECTION ════════════ -->
+  <section class="gallery-section">
+    <div class="container">
+
+      <!-- Heading -->
+      <div class="text-center mb-4">
+        <span class="eyebrow">Photo Gallery</span>
+        <h2 style="font-family:var(--font-head);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--forest);">
+          Products, Process &amp; People
+        </h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <!-- Stats -->
+      <div class="gallery-stats">
+        <div class="gs-item">
+          <span class="gs-num" id="visible-count">28</span>
+          <span class="gs-label">Showing</span>
+        </div>
+        <div class="gs-item">
+          <span class="gs-num">50+</span>
+          <span class="gs-label">Countries Served</span>
+        </div>
+        <div class="gs-item">
+          <span class="gs-num">500+</span>
+          <span class="gs-label">Clients Worldwide</span>
+        </div>
+      </div>
+
+      <!-- Category description, swaps with the active filter -->
+      <p class="gallery-intro" id="galleryIntro">Every photo below, sorted like fibre on a sample board.</p>
+
+      <!-- Filter buttons -->
+      <div class="gf-bar">
+        <button class="gf-btn is-active" data-filter="*"><span class="gf-dot"></span>All <span class="gf-count"
+            id="count-all"></span></button>
+        <button class="gf-btn" data-filter=".products"><span class="gf-dot"></span>Products <span class="gf-count"
+            id="count-products"></span></button>
+        <button class="gf-btn" data-filter=".process"><span class="gf-dot"></span>Manufacture <span class="gf-count"
+            id="count-process"></span></button>
+        <button class="gf-btn" data-filter=".banners"><span class="gf-dot"></span>Brand Visuals <span class="gf-count"
+            id="count-banners"></span></button>
+      </div>
+
+      <!-- Dynamic Isotope Grid -->
+      <div class="gal-grid" id="galGrid">
+        <div class="grid-sizer"></div>
+      </div><!-- /gal-grid -->
+
+    </div>
+  </section>
+
+  <!-- ════════════ CTA BAND ════════════ -->
+  <section class="cta-band">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-lt);display:block;text-align:center;">Interested in Our
+        Products?</span>
+      <h2>Ready to <em>Work Together?</em></h2>
+      <p>Contact our team today for a customised quote on any of our coir products.</p>
+      <a href="contact.html" class="btn-cta btn-cta-solid"><i class="bi bi-send-fill"></i> Get in Touch</a>
+      <a href="product.html" class="btn-cta btn-cta-outline"><i class="bi bi-grid-fill"></i> View Products</a>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CHATBOT LAUNCHER (Replaces old WhatsApp float) -->
+  <!-- Handled by assets/js/chatbot.js -->
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-4 footer-brand">
+          <img src="assets/images/logo/footerlogo.png" alt="Anuradha Coirs" style="border-radius: 8px;max-width:250px;"
+            loading="lazy">
+          <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India. Serving 500+
+            clients across 50+ countries worldwide.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <span class="footer-col-heading">Navigation</span>
+          <a href="index.html" class="footer-link"><i class="bi bi-chevron-right"></i>Home</a>
+          <a href="aboutcoir.html" class="footer-link"><i class="bi bi-chevron-right"></i>About Coir</a>
+          <a href="product.html" class="footer-link"><i class="bi bi-chevron-right"></i>Products</a>
+          <a href="process.html" class="footer-link"><i class="bi bi-chevron-right"></i>Process</a>
+          <a href="gallery.html" class="footer-link"><i class="bi bi-chevron-right"></i>Gallery</a>
+          <a href="contact.html" class="footer-link"><i class="bi bi-chevron-right"></i>Contact</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <span class="footer-col-heading">India Office</span>
+          <div class="footer-info-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN – 624219</span>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+919944859177">+91 99448 59177</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+918940787924">+91 89407 87924</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+447466435508">+44 7466 435508</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-3">
+          <span class="footer-col-heading">US Office</span>
+          <div class="footer-info-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA – 24013</span>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+12063919622">+1 (206) 391-9622</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span>
+          <a href="index.html">Anuradha Coirs &amp; Fibers</a>.
+          All Rights Reserved. | <a href="#">Terms &amp; Conditions</a>
+        </p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank" class="social-link"
+            title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank" class="social-link"
+            title="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="mailto:anuradhaexporters@gmail.com" class="social-link" title="Email"><i
+              class="bi bi-envelope-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════ SCRIPTS ════════════ -->
+  <script src="assets/js/gallery.js"></script>
+  <!-- Custom Google Translate Dropdown Script -->
+  <script src="assets/translate.js"></script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+  <script src="assets/cookie-consent.js"></script>
+  <!-- Interactive Chatbot Script -->
+  <script src="assets/js/chatbot.js"></script>
+</body>
+
+</html>

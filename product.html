@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Our Products | Anuradha Coirs &amp; Fibers</title>
+    <link rel="icon" href="assets/images/logo/favicon.png" type="image/png">
+    <meta name="description"
+        content="Premium quality coir fibre, coco peat, grow bags, and fresh coconuts — export-grade products from Anuradha Coirs & Fibers, Tamil Nadu, India.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom Translate Dropdown Styling -->
+    <link rel="stylesheet" href="assets/translate.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/product.css">
+    <!-- Interactive Chatbot Stylesheet -->
+    <link rel="stylesheet" href="assets/css/chatbot.css">
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════
+     TOAST CONTAINER
+════════════════════════════════════ -->
+    <div class="toast-stack" id="toastStack"></div>
+
+    <!-- ════════════════════════════════════
+     DRAWER OVERLAY + CATEGORY DRAWER
+════════════════════════════════════ -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer" id="catDrawer">
+        <div class="drawer-head">
+            <span class="drawer-head-title">Browse Categories</span>
+            <button class="drawer-close" id="drawerClose"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="drawer-search">
+            <div class="drawer-search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" class="sb-input" placeholder="Search products..." autocomplete="off">
+            </div>
+        </div>
+        <div class="drawer-body" id="drawerBody"></div>
+    </div>
+
+    <!-- ════════════════════════════════════
+     CART OVERLAY + CART DRAWER
+════════════════════════════════════ -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-head">
+            <div style="display:flex;align-items:center;">
+                <span class="cart-head-title">Your Enquiry Cart</span>
+                <span class="cart-head-count" id="cartHeadCount">0</span>
+            </div>
+            <button class="cart-close" id="cartClose"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="cart-items-wrap" id="cartItemsWrap">
+            <!-- Cart items rendered by JS -->
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-summary-row">
+                <span>Total Items</span>
+                <strong id="cartTotalItems">0</strong>
+            </div>
+
+            <div class="cart-total-row">
+                <div>
+                    <div class="cart-total-label">Enquiry Summary</div>
+                    <div class="cart-total-note">* Prices quoted after enquiry</div>
+                </div>
+            </div>
+            <div class="cart-wa-cta" id="cartWaCta">
+                <i class="bi bi-whatsapp"></i>
+                <div>
+                    <div class="cart-wa-cta-text">Quick WhatsApp Enquiry</div>
+                    <div class="cart-wa-cta-sub">Send cart directly to WhatsApp</div>
+                </div>
+            </div>
+            <div class="cart-actions-row">
+                <button class="btn-continue-shop" id="btnContinueShopping">
+                    <i class="bi bi-arrow-left"></i> Shop
+                </button>
+                <button class="btn-place-order" id="btnPlaceOrder">
+                    <i class="bi bi-send-fill"></i> Place Enquiry Order
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+     TOPBAR
+════════════════════════════════════ -->
+    <div class="topbar d-none d-md-block">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <i class="bi bi-envelope-fill me-1" style="color:var(--gold-lt)"></i>
+                    <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
+                        target="_blank" style="color:rgba(255,255,255,.75)" title="WhatsApp" aria-label="WhatsApp"><i
+                            class="bi bi-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank"
+                        style="color:rgba(255,255,255,.75)"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank"
+                        style="color:rgba(255,255,255,.75)"><i class="bi bi-instagram"></i></a>
+                    <!-- <a href="https://youtube.com" target="_blank" style="color:rgba(255,255,255,.75)"><i
+                            class="bi bi-youtube"></i></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+     NAVBAR
+════════════════════════════════════ -->
+    <div class="main-nav">
+        <div class="container-fluid px-4">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="index.html"><img src="assets/images/logo/mainlogo.png"
+                        alt="Anuradha Coirs" loading="lazy"></a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMain">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About <i class="bi bi-chevron-down nav-chevron"></i>
+                            </a>
+                            <ul class="dropdown-menu custom-nav-dropdown" aria-labelledby="aboutDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="about.html">
+                                        <i class="bi bi-building"></i>
+                                        <div>
+                                            <span class="dropdown-item-title">About Us</span>
+                                            <span class="dropdown-item-desc">Our company history, mission &amp; global reach</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="aboutcoir.html">
+                                        <i class="bi bi-flower1"></i>
+                                        <div>
+                                            <span class="dropdown-item-title">About Coir</span>
+                                            <span class="dropdown-item-desc">Learn about natural coir fiber &amp; eco benefits</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="product.html" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products <i class="bi bi-chevron-down nav-chevron"></i>
+                            </a>
+                            <div class="dropdown-menu products-mega-dropdown" aria-labelledby="productsDropdown">
+                                <div class="products-mega-grid">
+                                    
+                                    <!-- Col 1: Coco Peat & Substrates -->
+                                    <div class="products-mega-col">
+                                        <div class="products-mega-col-title"><i class="bi bi-box-seam"></i> Coco Peat &amp; Substrates</div>
+                                        <a href="product-detail.html?id=p002" class="products-mega-item">
+                                            <img src="assets/images/Products/cocopeat_block.jpeg" alt="Coco Peat 5 KG Block">
+                                            <div>
+                                                <span class="products-mega-item-title">Coco Peat 5 KG Block</span>
+                                                <span class="products-mega-item-code">AC-02 • Low EC &amp; High EC</span>
+                                            </div>
+                                        </a>
+                                        <a href="product-detail.html?id=p003" class="products-mega-item">
+                                            <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Bricks 650g">
+                                            <div>
+                                                <span class="products-mega-item-title">Coco Peat Bricks 650g</span>
+                                                <span class="products-mega-item-code">AC-03 • Low EC &amp; High EC</span>
+                                            </div>
+                                        </a>
+                                        <a href="product-detail.html?id=p006" class="products-mega-item">
+                                            <img src="assets/images/Products/cocoHuskChips.jpeg" alt="Coco Husk Chips">
+                                            <div>
+                                                <span class="products-mega-item-title">Coco Husk Chips</span>
+                                                <span class="products-mega-item-code">AC-06 • Low EC &amp; High EC</span>
+                                            </div>
+                                        </a>
+                                        <a href="product-detail.html?id=p007" class="products-mega-item">
+                                            <img src="assets/images/Products/cocoPeatCoin.jpeg" alt="Coco Coins & Discs">
+                                            <div>
+                                                <span class="products-mega-item-title">Coco Coins &amp; Discs</span>
+                                                <span class="products-mega-item-code">AC-07 • Low EC &amp; High EC</span>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Col 2: Grow Bags & Fibre -->
+                                    <div class="products-mega-col">
+                                        <div class="products-mega-col-title"><i class="bi bi-flower1"></i> Grow Bags &amp; Coir Fibre</div>
+
+                                        <!-- Coco Grow Bags Sub-Group Card -->
+                                        <div class="mega-subgroup">
+                                            <div class="mega-subgroup-header">
+                                                <span class="mega-subgroup-title"><i class="bi bi-box-seam"></i> Coco Grow Bags</span>
+                                                <span class="subgroup-badge">2 Products</span>
+                                            </div>
+                                            <div class="mega-subgroup-items">
+                                                <a href="product-detail.html?id=p004" class="products-mega-item">
+                                                    <img src="assets/images/Products/coirGrowBag.jpeg" alt="Cocopeat Grow Bag Slab">
+                                                    <div>
+                                                        <span class="products-mega-item-title">Cocopeat Grow Bag Slab</span>
+                                                        <span class="products-mega-item-code">AC-04 / AC-3A • Grade AC-3A</span>
+                                                    </div>
+                                                </a>
+                                                <a href="product-detail.html?id=p005" class="products-mega-item">
+                                                    <img src="assets/images/Products/openTopGrowBag.jpg" alt="Cocopeat Open Top Grow Bag">
+                                                    <div>
+                                                        <span class="products-mega-item-title">Cocopeat Open Top Grow Bag</span>
+                                                        <span class="products-mega-item-code">AC-05 • Volume 5–36L</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Coir Fibre -->
+                                        <a href="product-detail.html?id=p001" class="products-mega-item">
+                                            <img src="assets/images/Products/coirfiberNew.jpeg" alt="Coir Fibre">
+                                            <div>
+                                                <span class="products-mega-item-title">Coir Fibre (Raw &amp; Baled)</span>
+                                                <span class="products-mega-item-code">AC-01 • Industrial Bales</span>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Col 3: Coconuts & Seedlings -->
+                                    <div class="products-mega-col">
+                                        <div class="products-mega-col-title"><i class="bi bi-tree-fill"></i> Fresh Coconuts &amp; Seedlings</div>
+                                        <a href="product-detail.html?id=p008" class="products-mega-item">
+                                            <img src="assets/images/Products/semiHuskedCoconut.jpeg" alt="Semi Husked Coconut">
+                                            <div>
+                                                <span class="products-mega-item-title">Semi Husked Coconut</span>
+                                                <span class="products-mega-item-code">AC-08 • Long Shelf Life</span>
+                                            </div>
+                                        </a>
+                                        <a href="product-detail.html?id=p009" class="products-mega-item">
+                                            <img src="assets/images/Products/fullyHuskedCoconut.jpeg" alt="Fully Husked Coconut">
+                                            <div>
+                                                <span class="products-mega-item-title">Fully Husked Coconut</span>
+                                                <span class="products-mega-item-code">AC-09 • Ready Culinary</span>
+                                            </div>
+                                        </a>
+                                        <a href="product-detail.html?id=p010" class="products-mega-item">
+                                            <img src="assets/images/Products/TenderCoconut.jpeg" alt="Tender Coconut">
+                                            <div>
+                                                <span class="products-mega-item-title">Tender Green Coconut</span>
+                                                <span class="products-mega-item-code">AC-10 • Hydration Water</span>
+                                            </div>
+                                        </a>
+                                        <a href="product-detail.html?id=p011" class="products-mega-item">
+                                            <img src="assets/images/Products/NurserySeedlings.jpeg" alt="Coconut Seedlings">
+                                            <div>
+                                                <span class="products-mega-item-title">Coconut Seedlings</span>
+                                                <span class="products-mega-item-code">AC-11 • High-Yield Palms</span>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <!-- Footer Bar -->
+                                <div class="products-mega-footer" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                                        <span style="font-size:0.78rem;font-weight:700;color:var(--forest);"><i class="bi bi-sliders text-gold me-1"></i> EC Grades:</span>
+                                        <a href="product.html?grade=low_ec" style="font-size:0.74rem;font-weight:700;color:#2e7d32;background:#e8f5e9;padding:3px 10px;border-radius:12px;border:1px solid #c8e6c9;text-decoration:none;"><i class="bi bi-droplet-fill me-1"></i> 🌿 Low EC (Washed)</a>
+                                        <a href="product.html?grade=high_ec" style="font-size:0.74rem;font-weight:700;color:#d84315;background:#fbe9e7;padding:3px 10px;border-radius:12px;border:1px solid #ffccbc;text-decoration:none;"><i class="bi bi-lightning-charge-fill me-1"></i> ⚡ High EC (Unwashed)</a>
+                                    </div>
+                                    <a href="product.html">View All Products <i class="bi bi-arrow-right"></i></a>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        <li class="nav-item nav-actions-item">
+                            <div class="nav-actions-wrap">
+                                <div id="google_translate_element"></div>
+                                <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products." target="_blank" rel="noopener noreferrer" class="nav-inquire-btn"><i class="bi bi-whatsapp"></i> Inquire Now</a>
+                            </div>
+                        </li>
+                        <!-- Cart Button -->
+                        <li class="nav-item">
+                            <button class="nav-cart-btn" id="navCartBtn" onclick="openCart()">
+                                <i class="bi bi-cart3"></i> Cart
+                                <span class="nav-cart-badge" id="navCartBadge">0</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+     PAGE HERO
+════════════════════════════════════ -->
+    <div class="page-hero">
+        <div class="hero-blob b1"></div>
+        <div class="hero-blob b2"></div>
+        <div class="page-hero-content">
+            <span class="eyebrow-pill"><i class="bi bi-stars"></i> What We Offer</span>
+            <h1>Our <em>Products</em></h1>
+            <p>Premium coir solutions crafted for a greener world</p>
+        </div>
+        <div class="scroll-cue"><i class="bi bi-chevron-down"></i></div>
+    </div>
+
+    <!-- FLOATING BREADCRUMB -->
+    <div class="breadcrumb-float-wrap">
+        <div class="breadcrumb-bar">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-fill me-1"></i>Home</a></li>
+                <li class="breadcrumb-item active">Products</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+     SHOP WRAPPER
+════════════════════════════════════ -->
+    <div class="shop-wrap" id="shopWrap">
+        <div class="shop-main">
+
+            <!-- QUALITY GRADE FILTER STRIP -->
+            <div class="quality-filter-strip">
+                <span class="qfs-label"><i class="bi bi-sliders text-gold me-1"></i> Quality Grade / EC Level:</span>
+                <button class="qfs-btn active" id="btnECAll" onclick="filterByECGrade('all', this)">
+                    <i class="bi bi-grid-fill me-1"></i> All Products
+                </button>
+                <button class="qfs-btn" id="btnECLow" onclick="filterByECGrade('low_ec', this)">
+                    <i class="bi bi-droplet-fill text-success me-1"></i> 🌿 Low EC (Washed) (&lt; 0.5 mS/cm)
+                </button>
+                <button class="qfs-btn" id="btnECHigh" onclick="filterByECGrade('high_ec', this)">
+                    <i class="bi bi-lightning-charge-fill text-warning me-1"></i> ⚡ High EC (Unwashed) (2.5 – 3.5 mS/cm)
+                </button>
+            </div>
+
+            <!-- FILTER BAR -->
+            <div class="filter-bar">
+                <div class="filter-bar-left">
+                    <button class="cat-drawer-btn" id="openDrawer">
+                        <i class="bi bi-layout-sidebar-inset"></i> Categories
+                    </button>
+                    <div class="fb-divider d-none d-sm-block"></div>
+                    <!-- Inline Search -->
+                    <div class="fb-search-wrap d-none d-sm-flex">
+                        <i class="bi bi-search"></i>
+                        <input type="text" class="sb-input" placeholder="Search products..." autocomplete="off">
+                    </div>
+                    <div class="fb-divider d-none d-md-block"></div>
+                    <div>
+                        <div class="fb-title" id="fbTitle">All Products</div>
+                        <div class="fb-count" id="fbCount"></div>
+                    </div>
+                </div>
+                <div class="filter-bar-right">
+                    <select class="sort-sel" id="sortSel">
+                        <option value="default">Sort: Default</option>
+                        <option value="az">A to Z</option>
+                        <option value="za">Z to A</option>
+                        <option value="new">New First</option>
+                    </select>
+                    <button class="view-btn active" id="vG3" title="3 columns"><i
+                            class="bi bi-grid-3x3-gap-fill"></i></button>
+                    <button class="view-btn" id="vG2" title="2 columns"><i class="bi bi-grid-fill"></i></button>
+                    <button class="view-btn d-none d-xl-flex" id="vG4" title="4 columns"><i
+                            class="bi bi-grid"></i></button>
+                    <button class="view-btn" id="vLst" title="List"><i class="bi bi-list-ul"></i></button>
+                </div>
+            </div>
+
+            <!-- PRODUCTS GRID -->
+            <div class="shop-main-inner" id="shopInner"></div>
+
+            <!-- RECENTLY VIEWED -->
+            <div id="recentlySection" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+     CTA BAND
+════════════════════════════════════ -->
+    <section class="cta-band">
+        <div class="container">
+            <h2>Need a <em>Custom Order?</em></h2>
+            <p>Tell us your specifications — we handle everything from production to worldwide delivery.</p>
+            <a href="contact.html" class="btn-cta gold"><i class="bi bi-send-fill"></i> Request a Quote</a>
+            <a href="process.html" class="btn-cta outline"><i class="bi bi-play-circle-fill"></i> See Our Process</a>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE CHATBOT LAUNCHER (Replaces old WhatsApp float) -->
+    <!-- Handled by assets/js/chatbot.js -->
+
+    <!-- ════════════════════════════════════
+     STICKY MOBILE CART BAR
+════════════════════════════════════ -->
+    <div class="sticky-cart-bar" id="stickyCartBar">
+        <div class="scb-info">
+            <div class="scb-count"><span id="scbCount">0</span> item(s) in cart</div>
+        </div>
+        <button class="scb-btn" onclick="openCart()">
+            <i class="bi bi-cart3"></i> View Cart
+        </button>
+    </div>
+
+    <!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-12 col-md-4 footer-brand">
+                    <img src="assets/images/logo/footerlogo.png" alt="Anuradha Coirs"
+                        style="border-radius: 8px;max-width:250px;" loading="lazy">
+                    <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India.
+                        Serving 500+
+                        clients across 50+ countries worldwide.</p>
+                </div>
+                <div class="col-6 col-md-2">
+                    <span class="footer-col-heading">Navigation</span>
+                    <a href="index.html" class="footer-link"><i class="bi bi-chevron-right"></i>Home</a>
+                    <a href="aboutcoir.html" class="footer-link"><i class="bi bi-chevron-right"></i>About Coir</a>
+                    <a href="product.html" class="footer-link"><i class="bi bi-chevron-right"></i>Products</a>
+                    <a href="process.html" class="footer-link"><i class="bi bi-chevron-right"></i>Process</a>
+                    <a href="gallery.html" class="footer-link"><i class="bi bi-chevron-right"></i>Gallery</a>
+                    <a href="contact.html" class="footer-link"><i class="bi bi-chevron-right"></i>Contact</a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <span class="footer-col-heading">India Office</span>
+                    <div class="footer-info-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN – 624219</span>
+                    </div>
+                    <div class="footer-info-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <a href="tel:+919944859177">+91 99448 59177</a>
+                    </div>
+                    <div class="footer-info-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <a href="tel:+918940787924">+91 89407 87924</a>
+                    </div>
+                    <div class="footer-info-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <a href="tel:+447466435508">+44 7466 435508</a>
+                    </div>
+                    <div class="footer-info-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <span class="footer-col-heading">US Office</span>
+                    <div class="footer-info-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA – 24013</span>
+                    </div>
+                    <div class="footer-info-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <a href="tel:+12063919622">+1 (206) 391-9622</a>
+                    </div>
+                    <div class="footer-info-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+                <p>&copy; <span id="footer-year"></span>
+                    <a href="index.html">Anuradha Coirs &amp; Fibers</a>.
+                    All Rights Reserved. | <a href="#">Terms &amp; Conditions</a>
+                </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank" class="social-link"
+                        title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank" class="social-link"
+                        title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <!-- <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i
+                            class="bi bi-youtube"></i></a> -->
+                    <a href="mailto:anuradhaexporters@gmail.com" class="social-link" title="Email"><i
+                            class="bi bi-envelope-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- ════════════════════════════════════
+     QUICK QUALITY GRADE SELECTION MODAL
+════════════════════════════════════ -->
+    <div class="modal fade qq-modal-wrap" id="quickQualityModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content qq-modal-content">
+                <div class="qq-modal-header">
+                    <div class="qq-hdr-title-wrap">
+                        <span class="qq-hdr-icon"><i class="bi bi-sliders text-gold"></i></span>
+                        <div>
+                            <h5 class="qq-modal-title">Select Quality Grade</h5>
+                            <p class="qq-modal-sub">Choose Electrical Conductivity (EC) washing grade</p>
+                        </div>
+                    </div>
+                    <button type="button" class="qq-close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+                </div>
+                
+                <div class="qq-modal-body">
+                    <!-- Product Preview Card -->
+                    <div class="qq-prod-preview">
+                        <img id="qqModalImg" src="" alt="" class="qq-prod-img">
+                        <div class="qq-prod-info">
+                            <h6 id="qqModalName" class="qq-prod-name"></h6>
+                            <div class="qq-prod-meta">
+                                <span id="qqModalCode" class="qq-code-pill"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section Label -->
+                    <div class="qq-section-label">
+                        <i class="bi bi-patch-check-fill text-gold me-1"></i> Available Quality Grades:
+                    </div>
+
+                    <!-- Grade Selection Cards -->
+                    <div class="qq-cards-grid">
+                        <!-- Low EC Card -->
+                        <div class="qq-grade-card low active" id="qqBtnLow" onclick="selectQQGrade('low_ec')">
+                            <div class="qq-card-header">
+                                <span class="qq-badge low"><i class="bi bi-droplet-fill me-1"></i> Washed</span>
+                                <div class="qq-radio"><i class="bi bi-check-circle-fill text-success" id="qqCheckLow"></i></div>
+                            </div>
+                            <div class="qq-card-title">🌿 Low EC</div>
+                            <div class="qq-card-val">&lt; 0.5 mS/cm</div>
+                            <div class="qq-card-use"><i class="bi bi-flower1 me-1"></i> Hydroponics &amp; Greenhouses</div>
+                        </div>
+
+                        <!-- High EC Card -->
+                        <div class="qq-grade-card high" id="qqBtnHigh" onclick="selectQQGrade('high_ec')">
+                            <div class="qq-card-header">
+                                <span class="qq-badge high"><i class="bi bi-lightning-charge-fill me-1"></i> Unwashed</span>
+                                <div class="qq-radio"><i class="bi bi-circle text-muted" id="qqCheckHigh"></i></div>
+                            </div>
+                            <div class="qq-card-title">⚡ High EC</div>
+                            <div class="qq-card-val">2.5 – 3.5 mS/cm</div>
+                            <div class="qq-card-use"><i class="bi bi-box-seam me-1"></i> Bedding &amp; Amendment</div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity & Unit Bar -->
+                    <div class="qq-qty-bar">
+                        <div class="qq-qty-col">
+                            <label class="qq-qty-label"><i class="bi bi-box me-1"></i> Unit</label>
+                            <select class="form-select qq-select" id="qqUnitSelect">
+                                <option value="Pieces">Pieces (Blocks/Bricks)</option>
+                                <option value="Kg">Kg (Kilograms)</option>
+                                <option value="Ton">Ton (Metric Tons)</option>
+                            </select>
+                        </div>
+                        <div class="qq-qty-col">
+                            <label class="qq-qty-label"><i class="bi bi-hash me-1"></i> Quantity</label>
+                            <input type="number" class="form-control qq-input" id="qqQtyInput" value="100" min="1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qq-modal-footer">
+                    <button type="button" class="qq-btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="qq-btn-confirm" onclick="confirmQQAddToCart()">
+                        <i class="bi bi-cart-plus-fill me-1 text-gold"></i> Add to Enquiry Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+     ORDER ENQUIRY MODAL
+════════════════════════════════════ -->
+    <div class="modal fade order-modal" id="orderModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-send-fill me-2" style="color:var(--gold-lt)"></i>Place
+                        Enquiry Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-0" id="orderModalBody">
+                    <div class="order-layout" id="orderModalFormView">
+                        <!-- FORM COLUMN -->
+                        <div class="order-form-col">
+                            <div id="orderFormInner">
+                                <!-- Contact Details -->
+                                <div class="order-section-title"><i class="bi bi-person-fill me-2"></i>Customer Details
+                                </div>
+
+                                <div class="order-form-row">
+                                    <div class="order-form-group">
+                                        <label>Full Name <span class="req">*</span></label>
+                                        <input type="text" class="order-form-control" id="of-name"
+                                            placeholder="Your full name" required>
+                                    </div>
+                                    <div class="order-form-group">
+                                        <label>Company Name <span
+                                                style="color:var(--text-muted)">(Optional)</span></label>
+                                        <input type="text" class="order-form-control" id="of-company"
+                                            placeholder="Your company name">
+                                    </div>
+                                </div>
+
+                                <div class="order-form-row">
+                                    <div class="order-form-group">
+                                        <label>Mobile Number <span class="req">*</span></label>
+                                        <input type="tel" class="order-form-control" id="of-mobile"
+                                            placeholder="+91 00000 00000" required>
+                                    </div>
+                                    <div class="order-form-group">
+                                        <label>WhatsApp Number <span class="req">*</span></label>
+                                        <input type="tel" class="order-form-control" id="of-whatsapp"
+                                            placeholder="+91 00000 00000" required>
+                                    </div>
+                                </div>
+
+                                <div class="order-form-group">
+                                    <label>Email Address <span class="req">*</span></label>
+                                    <input type="email" class="order-form-control" id="of-email"
+                                        placeholder="you@example.com" required>
+                                </div>
+
+                                <div style="margin-top:20px; margin-bottom:16px;" class="order-section-title"><i
+                                        class="bi bi-geo-alt-fill me-2"></i>Shipping Address</div>
+
+                                <div class="order-form-row">
+                                    <div class="order-form-group">
+                                        <label>Country <span class="req">*</span></label>
+                                        <input type="text" class="order-form-control" id="of-country"
+                                            placeholder="e.g. United States" required>
+                                    </div>
+                                    <div class="order-form-group">
+                                        <label>State / Province <span class="req">*</span></label>
+                                        <input type="text" class="order-form-control" id="of-state"
+                                            placeholder="e.g. California" required>
+                                    </div>
+                                </div>
+
+                                <div class="order-form-row">
+                                    <div class="order-form-group">
+                                        <label>City <span class="req">*</span></label>
+                                        <input type="text" class="order-form-control" id="of-city"
+                                            placeholder="e.g. Los Angeles" required>
+                                    </div>
+                                    <div class="order-form-group">
+                                        <label>ZIP / Postal Code <span class="req">*</span></label>
+                                        <input type="text" class="order-form-control" id="of-zip"
+                                            placeholder="e.g. 90001" required>
+                                    </div>
+                                </div>
+
+                                <div class="order-form-group">
+                                    <label>Complete Address <span class="req">*</span></label>
+                                    <textarea class="order-form-control" id="of-address" rows="2"
+                                        placeholder="House / Building, Street, Area..." required
+                                        style="resize:vertical;min-height:70px;"></textarea>
+                                </div>
+
+                                <div class="order-form-group" style="margin-top:8px;">
+                                    <label>Additional Notes <span
+                                            style="color:var(--text-muted)">(Optional)</span></label>
+                                    <textarea class="order-form-control" id="of-notes" rows="2"
+                                        placeholder="Any specific requirements, packaging preferences, target quantity..."
+                                        style="resize:vertical;min-height:70px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ORDER SUMMARY COLUMN -->
+                        <div class="order-summary-col">
+                            <div class="os-title"><i class="bi bi-cart-check-fill me-2"
+                                    style="color:var(--gold)"></i>Order Summary</div>
+                            <div id="osSummaryItems"><!-- Rendered by JS --></div>
+                            <div class="os-totals" id="osTotals"></div>
+                        </div>
+                    </div>
+                    <div id="orderModalSuccessView" style="display: none;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-submit-order" id="btnSubmitOrder" onclick="submitOrder()">
+                        <i class="bi bi-whatsapp"></i>
+                        Submit Order via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════ -->
+    <script src="assets/products-data.js"></script>
+    <script src="assets/js/product.js"></script>
+
+    <!-- Custom Google Translate Dropdown Script -->
+    <script src="assets/translate.js"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="assets/cookie-consent.js"></script>
+    <!-- Interactive Chatbot Script -->
+    <script src="assets/js/chatbot.js"></script>
+</body>
+
+</html>
