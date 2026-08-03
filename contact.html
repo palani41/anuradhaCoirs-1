@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Anuradha Coirs &amp; Fibers</title>
+  <link rel="icon" href="assets/images/logo/favicon.png" type="image/png">
+  <meta name="description"
+    content="Get in touch with Anuradha Coirs & Fibers — India's trusted coir product manufacturer and exporter.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Custom Translate Dropdown Styling -->
+  <link rel="stylesheet" href="assets/translate.css">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- Leaflet Map library (clean POI-free maps) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <link rel="stylesheet" href="assets/css/contact.css">
+  <!-- Interactive Chatbot Stylesheet -->
+  <link rel="stylesheet" href="assets/css/chatbot.css">
+</head>
+
+<body>
+
+  <!-- ════════════ TOP BAR ════════════ -->
+  <div class="topbar d-none d-md-block">
+    <div class="container-fluid px-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <i class="bi bi-envelope-fill me-1" style="color:var(--gold);"></i>
+          <a href="/cdn-cgi/l/email-protection#fb92959d94bb9a958e899a9f939a98949289889d9299899e88d5989496"><span
+              class="__cf_email__"
+              data-cfemail="345d5a525b74555a414655505c55575b5d4647525d564651471a575b59">anuradhaexporters@gmail.com</span></a>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
+            target="_blank" style="color:rgba(255,255,255,0.75);" title="WhatsApp" aria-label="WhatsApp"><i
+              class="bi bi-whatsapp"></i></a>
+          <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank"
+            style="color:rgba(255,255,255,0.75);"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank"
+            style="color:rgba(255,255,255,0.75);"><i class="bi bi-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank" style="color:rgba(255,255,255,0.75);"><i
+              class="bi bi-youtube"></i></a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ NAVBAR ════════════ -->
+  <div class="main-nav">
+    <div class="container-fluid px-4">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/images/logo/mainlogo.png" alt="Anuradha Coirs &amp; Fibers" loading="lazy">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+          aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About <i class="bi bi-chevron-down nav-chevron"></i>
+              </a>
+              <ul class="dropdown-menu custom-nav-dropdown" aria-labelledby="aboutDropdown">
+                <li>
+                  <a class="dropdown-item" href="about.html">
+                    <i class="bi bi-building"></i>
+                    <div>
+                      <span class="dropdown-item-title">About Us</span>
+                      <span class="dropdown-item-desc">Our company history, mission &amp; global reach</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="aboutcoir.html">
+                    <i class="bi bi-flower1"></i>
+                    <div>
+                      <span class="dropdown-item-title">About Coir</span>
+                      <span class="dropdown-item-desc">Learn about natural coir fiber &amp; eco benefits</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="product.html" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Products <i class="bi bi-chevron-down nav-chevron"></i>
+              </a>
+              <div class="dropdown-menu products-mega-dropdown" aria-labelledby="productsDropdown">
+                <div class="products-mega-grid">
+                  
+                  <!-- Col 1: Coco Peat & Substrates -->
+                  <div class="products-mega-col">
+                    <div class="products-mega-col-title"><i class="bi bi-box-seam"></i> Coco Peat &amp; Substrates</div>
+                    <a href="product-detail.html?id=p002" class="products-mega-item">
+                      <img src="assets/images/Products/cocopeat_block.jpeg" alt="Coco Peat 5 KG Block">
+                      <div>
+                        <span class="products-mega-item-title">Coco Peat 5 KG Block</span>
+                        <span class="products-mega-item-code">AC-02 • High Expansion</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p003" class="products-mega-item">
+                      <img src="assets/images/Products/bricks.jpeg" alt="Coco Peat Bricks 650g">
+                      <div>
+                        <span class="products-mega-item-title">Coco Peat Bricks 650g</span>
+                        <span class="products-mega-item-code">AC-03 • Retail Ready</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p006" class="products-mega-item">
+                      <img src="assets/images/Products/cocoHuskChips.jpeg" alt="Coco Husk Chips">
+                      <div>
+                        <span class="products-mega-item-title">Coco Husk Chips</span>
+                        <span class="products-mega-item-code">AC-06 • Orchid Substrate</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p007" class="products-mega-item">
+                      <img src="assets/images/Products/cocoPeatCoin.jpeg" alt="Coco Coins & Discs">
+                      <div>
+                        <span class="products-mega-item-title">Coco Coins &amp; Discs</span>
+                        <span class="products-mega-item-code">AC-07 • Seed Starter</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Col 2: Grow Bags & Fibre -->
+                  <div class="products-mega-col">
+                    <div class="products-mega-col-title"><i class="bi bi-flower1"></i> Grow Bags &amp; Coir Fibre</div>
+
+                    <!-- Coco Grow Bags Sub-Group Card -->
+                    <div class="mega-subgroup">
+                      <div class="mega-subgroup-header">
+                        <span class="mega-subgroup-title"><i class="bi bi-box-seam"></i> Coco Grow Bags</span>
+                        <span class="subgroup-badge">2 Products</span>
+                      </div>
+                      <div class="mega-subgroup-items">
+                        <a href="product-detail.html?id=p004" class="products-mega-item">
+                          <img src="assets/images/Products/coirGrowBag.jpeg" alt="Cocopeat Grow Bag Slab">
+                          <div>
+                            <span class="products-mega-item-title">Cocopeat Grow Bag Slab</span>
+                            <span class="products-mega-item-code">AC-04 / AC-3A • Grade AC-3A</span>
+                          </div>
+                        </a>
+                        <a href="product-detail.html?id=p005" class="products-mega-item">
+                          <img src="assets/images/Products/openTopGrowBag.jpg" alt="Cocopeat Open Top Grow Bag">
+                          <div>
+                            <span class="products-mega-item-title">Cocopeat Open Top Grow Bag</span>
+                            <span class="products-mega-item-code">AC-05 • Volume 5–36L</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Coir Fibre -->
+                    <a href="product-detail.html?id=p001" class="products-mega-item">
+                      <img src="assets/images/Products/coirfiberNew.jpeg" alt="Coir Fibre">
+                      <div>
+                        <span class="products-mega-item-title">Coir Fibre (Raw &amp; Baled)</span>
+                        <span class="products-mega-item-code">AC-01 • Industrial Bales</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Col 3: Coconuts & Seedlings -->
+                  <div class="products-mega-col">
+                    <div class="products-mega-col-title"><i class="bi bi-tree-fill"></i> Fresh Coconuts &amp; Seedlings</div>
+                    <a href="product-detail.html?id=p008" class="products-mega-item">
+                      <img src="assets/images/Products/semiHuskedCoconut.jpeg" alt="Semi Husked Coconut">
+                      <div>
+                        <span class="products-mega-item-title">Semi Husked Coconut</span>
+                        <span class="products-mega-item-code">AC-08 • Long Shelf Life</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p009" class="products-mega-item">
+                      <img src="assets/images/Products/fullyHuskedCoconut.jpeg" alt="Fully Husked Coconut">
+                      <div>
+                        <span class="products-mega-item-title">Fully Husked Coconut</span>
+                        <span class="products-mega-item-code">AC-09 • Ready Culinary</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p010" class="products-mega-item">
+                      <img src="assets/images/Products/TenderCoconut.jpeg" alt="Tender Coconut">
+                      <div>
+                        <span class="products-mega-item-title">Tender Green Coconut</span>
+                        <span class="products-mega-item-code">AC-10 • Hydration Water</span>
+                      </div>
+                    </a>
+                    <a href="product-detail.html?id=p011" class="products-mega-item">
+                      <img src="assets/images/Products/NurserySeedlings.jpeg" alt="Coconut Seedlings">
+                      <div>
+                        <span class="products-mega-item-title">Coconut Seedlings</span>
+                        <span class="products-mega-item-code">AC-11 • High-Yield Palms</span>
+                      </div>
+                    </a>
+                  </div>
+
+                </div>
+
+                <!-- Footer Bar -->
+                <div class="products-mega-footer">
+                  <span style="font-size:0.78rem;color:#556b62;"><i class="bi bi-patch-check-fill" style="color:#b8975a;"></i> Export Quality • ISO Certified • Global Shipping</span>
+                  <a href="product.html">View All Products <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
+            <li class="nav-item nav-actions-item">
+              <div class="nav-actions-wrap">
+                <div id="google_translate_element"></div>
+                <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products." target="_blank" rel="noopener noreferrer" class="nav-inquire-btn"><i class="bi bi-whatsapp"></i> Inquire Now</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ════════════ PAGE HERO ════════════ -->
+  <div class="page-hero">
+    <div class="hero-blob b1"></div>
+    <div class="hero-blob b2"></div>
+    <div class="page-hero-content">
+      <span class="eyebrow-pill"><i class="bi bi-stars"></i> Get In Touch</span>
+      <h1>Contact <em>Us</em></h1>
+      <p>We'd love to hear from you — reach out for quotes, partnerships, or any queries</p>
+    </div>
+    <div class="scroll-cue"><i class="bi bi-chevron-down"></i></div>
+  </div>
+
+  <!-- ════════════ FLOATING BREADCRUMB ════════════ -->
+  <div class="breadcrumb-float-wrap">
+    <div class="breadcrumb-bar">
+      <ol>
+        <li><a href="index.html"><i class="bi bi-house-door-fill"></i> Home</a></li>
+        <li class="sep"><i class="bi bi-chevron-right"></i></li>
+        <li class="current">Contact Us</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ════════════ CONTACT INFO CARDS ════════════ -->
+  <section class="contact-info-section section-sm">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="eyebrow">Reach Out</span>
+        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--forest);">How to Find Us
+        </h2>
+        <div class="heading-line center"></div>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-12 col-md-4">
+          <div class="cinfo-card">
+            <div class="cinfo-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <h4>India Office</h4>
+            <p>212/6B Krishnapuram Main Road,<br>Nilakkottai, Dindigul,<br>Tamilnadu – 624219</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="cinfo-card">
+            <div class="cinfo-icon"><i class="bi bi-telephone-fill"></i></div>
+            <h4>Phone &amp; Email</h4>
+            <p>
+              <a href="tel:+919944859177">+91 99448 59177</a><br>
+              <a href="tel:+918940787924">+91 89407 87924</a><br>
+              <a href="tel:+447466435508">+44 7466 435508</a> (UK Support)<br>
+              <a href="tel:+12063919622">+1 (206) 391-9622</a> (US Support)<br>
+              <a href="/cdn-cgi/l/email-protection#8de4e3ebe2cdece3f8ffece9e5eceee2e4fffeebe4efffe8fea3eee2e0"><span
+                  class="__cf_email__"
+                  data-cfemail="9bf2f5fdf4dbfaf5eee9fafff3faf8f4f2e9e8fdf2f9e9fee8b5f8f4f6">anuradhaexporters@gmail.com</span></a>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="cinfo-card">
+            <div class="cinfo-icon"><i class="bi bi-globe-americas"></i></div>
+            <h4>US Office</h4>
+            <p>Mr. Dave Wertz<br>1101 Service Ave SE,<br>Roanoke VA – 24013</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ CONTACT FORM + INFO PANEL ════════════ -->
+  <section class="contact-form-section section">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Form -->
+        <div class="col-12 col-lg-7">
+          <div class="contact-form-card">
+            <h2>Send Us a Message</h2>
+            <p class="sub">Fill in the form below and our team will respond within 24 hours.</p>
+            <form>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input type="text" name="firstName" class="form-input" placeholder="John">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" name="lastName" class="form-input" placeholder="Smith">
+                </div>
+              </div>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" name="email" class="form-input" placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" name="phone" class="form-input" placeholder="+1 234 567 8900">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Subject</label>
+                <input type="text" name="subject" class="form-input" placeholder="Product enquiry / Quote request…">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Message</label>
+                <textarea name="message" class="form-input" placeholder="Tell us about your requirements…"></textarea>
+              </div>
+              <button type="submit" class="btn-primary-coir"
+                style="width:100%;justify-content:center;margin-top:4px;font-size:0.88rem;padding:14px;">
+                Send Message <i class="bi bi-send-fill"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="col-12 col-lg-5">
+          <div class="contact-info-panel">
+            <h3>Anuradha Coirs &amp; Fibers</h3>
+            <p class="tagline">Serving the world from the heart of India</p>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <span class="info-text-label">India Office</span>
+                <span class="info-text-val"><a href="https://www.google.com/maps?q=10%C2%B005'48.7%22N+77%C2%B055'40.6%22E" target="_blank" style="color:inherit;">212/6B Krishnapuram Main Road, Nilakkottai,<br>Dindigul, Tamilnadu – 624219 <i class="bi bi-box-arrow-up-right" style="font-size:0.75rem;color:var(--gold);"></i></a></span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <span class="info-text-label">India Phone</span>
+                <span class="info-text-val">
+                  <a href="tel:+919944859177">+91 99448 59177</a><br>
+                  <a href="tel:+918940787924">+91 89407 87924</a><br>
+                  <a href="tel:+447466435508">+44 7466 435508</a>
+                </span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <span class="info-text-label">Email</span>
+                <span class="info-text-val"><a
+                    href="/cdn-cgi/l/email-protection#7c15121a133c1d12090e1d18141d1f13150e0f1a151e0e190f521f1311"><span
+                      class="__cf_email__"
+                      data-cfemail="01686f676e41606f747360656960626e6873726768637364722f626e6c">anuradhaexporters@gmail.com</span></a></span>
+              </div>
+            </div>
+
+            <hr class="info-divider">
+
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-globe-americas"></i></div>
+              <div>
+                <span class="info-text-label">US Office</span>
+                <span class="info-text-val">Mr. Dave Wertz<br>1101 Service Ave SE, Roanoke VA – 24013</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <span class="info-text-label">US Phone</span>
+                <span class="info-text-val"><a href="tel:+12063919622">+1 (206) 391-9622</a></span>
+              </div>
+            </div>
+
+            <hr class="info-divider">
+
+            <!-- Social links -->
+            <div class="d-flex gap-2 mt-2">
+              <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank" class="social-link"
+                title="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank" class="social-link"
+                title="Instagram"><i class="bi bi-instagram"></i></a>
+              <!-- <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i
+                  class="bi bi-youtube"></i></a> -->
+              <a href="/cdn-cgi/l/email-protection#167f787079567778636477727e7775797f6465707f746473653875797b"
+                class="social-link" title="Email"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ MAP ════════════ -->
+  <section class="map-section section-sm">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="eyebrow">Find Us</span>
+        <h2 style="font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);">Our Locations
+        </h2>
+        <div class="heading-line center"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <p
+            style="font-family:var(--font-body);font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">
+            India — Tamilnadu</p>
+          <div class="map-wrap">
+            <div id="india-leaflet-map" style="width:100%; height:450px; border-radius:14px; z-index:1;"></div>
+            <div class="gmap-card-overlay">
+              <div class="gmap-card-content">
+                <div class="gmap-card-title">ANURADHA COIRS &amp; FIBRES</div>
+                <div class="gmap-card-address">212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, Tamilnadu – 624219</div>
+              </div>
+              <div class="gmap-card-actions">
+                <a href="https://www.google.com/maps/search/?api=1&query=ANURADHA+COIRS+%26+FIBRES+Nilakkottai" target="_blank" rel="noopener" class="gmap-card-btn" title="View larger map in Google Maps">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=10.096865,77.925347" target="_blank" rel="noopener" class="gmap-card-btn directions" title="Get Directions">
+                  <i class="bi bi-sign-turn-right-fill"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <p
+            style="font-family:var(--font-body);font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">
+            USA — Roanoke, Virginia</p>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.7569362798754!2d-79.9232254250235!3d37.253474042019235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884d0d8061e91821%3A0xe6d0f8bde5fb4ae6!2s1101%20Service%20Ave%20SE%2C%20Roanoke%2C%20VA%2024013%2C%20USA!5e0!3m2!1sen!2sin!4v1720373824268!5m2!1sen!2sin"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CHATBOT LAUNCHER (Replaces old WhatsApp float) -->
+  <!-- Handled by assets/js/chatbot.js -->
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+
+        <div class="col-12 col-md-4 footer-brand">
+          <img src="assets/images/logo/footerlogo.png" alt="Anuradha Coirs" style="border-radius: 8px;max-width:250px;"
+            loading="lazy">
+          <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India. Serving 500+
+            clients across 50+ countries worldwide.</p>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <span class="footer-col-heading">Navigation</span>
+          <a href="index.html" class="footer-link"><i class="bi bi-chevron-right"></i>Home</a>
+          <a href="aboutcoir.html" class="footer-link"><i class="bi bi-chevron-right"></i>About Coir</a>
+          <a href="product.html" class="footer-link"><i class="bi bi-chevron-right"></i>Products</a>
+          <a href="process.html" class="footer-link"><i class="bi bi-chevron-right"></i>Process</a>
+          <a href="gallery.html" class="footer-link"><i class="bi bi-chevron-right"></i>Gallery</a>
+          <a href="contact.html" class="footer-link"><i class="bi bi-chevron-right"></i>Contact</a>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <span class="footer-col-heading">India Office</span>
+          <div class="footer-info-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>212/6B Krishnapuram Main Road, Nilakkottai, Dindigul, TN – 624219</span>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+919944859177">+91 99448 59177</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+918940787924">+91 89407 87924</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+447466435508">+44 7466 435508</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <span class="footer-col-heading">US Office</span>
+          <div class="footer-info-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Mr. Dave Wertz, 1101 Service Ave SE, Roanoke VA – 24013</span>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+12063919622">+1 (206) 391-9622</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span>
+          <a href="index.html">Anuradha Coirs &amp; Fibers</a>.
+          All Rights Reserved. | <a href="#">Terms &amp; Conditions</a>
+        </p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/anuradha.coirs.fibres/" target="_blank" class="social-link"
+            title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_anuradhacoirsfibres/" target="_blank" class="social-link"
+            title="Instagram"><i class="bi bi-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i
+              class="bi bi-youtube"></i></a> -->
+          <a href="mailto:anuradhaexporters@gmail.com" class="social-link" title="Email"><i
+              class="bi bi-envelope-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════ SCRIPTS ════════════ -->
+  <script src="assets/js/contact.js"></script>
+  <!-- Custom Google Translate Dropdown Script -->
+  <script src="assets/translate.js"></script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+  <script src="assets/cookie-consent.js"></script>
+  <!-- Interactive Chatbot Script -->
+  <script src="assets/js/chatbot.js"></script>
+</body>
+
+</html>
