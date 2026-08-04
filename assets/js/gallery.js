@@ -13,7 +13,7 @@ const galleryData = [
   { folder: 'Products', filename: 'block_pressing_machine.jpeg', category: 'process', badge: 'Manufacture', label: 'Block Pressing Machine' },
 
   // 3. Brand Visuals (from head Folder)
-  { folder: 'head', filename: 'HomePageimages.jpeg', category: 'banners', badge: 'Brand Visuals', label: 'Anuradha Coirs & Fibers' },
+  { folder: 'head', filename: 'HomePageimages.jpeg', category: 'banners', badge: 'Brand Visuals', label: 'Anuradha Coirs' },
   { folder: 'head', filename: 'Contact-head.jpeg', category: 'banners', badge: 'Brand Visuals', label: 'Reach Out To Us' },
 
   // 4. Products (from Products Folder)

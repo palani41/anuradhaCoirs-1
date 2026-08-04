@@ -351,7 +351,7 @@
                 const p = SEED.find(x => x.id === item.id);
                 return `• ${p.name} (${p.code}) — ${item.amount} ${item.unit}`;
             }).join('%0A');
-            const msg = `Hello! I'm interested in the following products from Anuradha Coirs & Fibers:%0A%0A${lines}%0A%0APlease send me pricing and availability.`;
+            const msg = `Hello! I'm interested in the following products from Anuradha Coirs:%0A%0A${lines}%0A%0APlease send me pricing and availability.`;
             window.open(`https://api.whatsapp.com/send?phone=919944859177&text=${msg}`, '_blank');
         });
 
@@ -507,7 +507,7 @@
            PRODUCT SHARE
         ══════════════════════════════════════ */
         function shareProduct(name, code) {
-            const text = `Check out ${name} (${code}) from Anuradha Coirs & Fibers! Premium export-quality coir products.`;
+            const text = `Check out ${name} (${code}) from Anuradha Coirs! Premium export-quality coir products.`;
             if (navigator.share) {
                 navigator.share({ title: name, text: text, url: window.location.href });
             } else {

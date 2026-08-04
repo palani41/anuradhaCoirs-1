@@ -359,7 +359,7 @@ $(document).ready(function () {
     }
   });
 
-  // Global Map Tooltip hover & click redirect handlers
+  // Global Map Tooltip hover handlers
   $('.map-pin').on('mouseenter', function () {
     const name = $(this).data('name');
     const loc = $(this).data('location');
@@ -375,13 +375,6 @@ $(document).ready(function () {
     });
   }).on('mouseleave', function () {
     $('#mapTooltip').hide();
-  }).on('click', function () {
-    const name = $(this).data('name') || '';
-    const loc = $(this).data('location') || '';
-    const mapUrlAttr = $(this).data('map-url');
-
-    const targetUrl = mapUrlAttr || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ' ' + loc)}`;
-    window.open(targetUrl, '_blank');
   });
 
   // ==========================================

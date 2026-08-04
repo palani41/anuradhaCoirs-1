@@ -197,6 +197,27 @@ $(document).ready(function () {
   // 1c. FREQUENTLY ASKED QUESTIONS (FAQ) DATASET
   const FAQ_CATALOG = [
     {
+      id: 'faq_tech_specs',
+      question: "What technical specifications (EC, pH, expansion ratio, and sieve size) do your coir substrates meet?",
+      keywords: ['specifications', 'technical specs', 'ec level', 'ph level', 'expansion ratio', 'sieve size', 'moisture', 'low ec'],
+      answer: "Our coir substrates are engineered to meet strict international horticultural standards:\n\n" +
+        "• **Electrical Conductivity (EC)**: Low EC washed grade (< 0.5 mS/cm tested via 1:1.5 extraction) & High EC unwashed grade.\n" +
+        "• **pH Level**: Balanced 5.5 – 6.8 range optimal for nutrient uptake in commercial crops.\n" +
+        "• **Expansion Ratio**: High volumetric yield of 80 to 85 Litres per 5kg compressed block.\n" +
+        "• **Sieve Particle Size**: Sieved to < 10% fiber and sand content (< 2%) for maximum water holding capacity & aeration.",
+      chips: ['🌱 Select Products', '📝 Request Spec Sheet', '📜 Certifications', '💬 WhatsApp Sales']
+    },
+    {
+      id: 'faq_growbags_blends',
+      question: "How do your Grow Bag Slabs and Coco Husk Chip blends optimize root aeration and moisture retention?",
+      keywords: ['grow bag', 'grow bags', 'husk chips', 'blends', 'aeration', 'porosity', 'afp', 'whc', 'uv bag'],
+      answer: "Our commercial Grow Bags and Husk Chips are engineered for high-yield greenhouse hydroponics:\n\n" +
+        "• **Customized Blends**: Tailored Coco Peat to Husk Chip ratios (e.g. 70:30 or 50:50) to optimize Air-Filled Porosity (AFP 18–25%) and WHC.\n" +
+        "• **UV-Stabilized Polybag Slabs**: Heavy-duty co-extruded white/black polybags (2–3 years UV guaranteed) with pre-cut plant, drip & drainage holes.\n" +
+        "• **Uniform Chip Grading**: Screened to 8–12mm, 12–18mm, or 18–22mm sizes, preventing compaction & promoting root branching.",
+      chips: ['🌱 Select Products', '📝 Request Grow Bag Quote', '📜 Certifications', '💬 WhatsApp Sales']
+    },
+    {
       id: 'faq3',
       question: "What is your Minimum Order Quantity (MOQ) for international shipments?",
       keywords: ['moq', 'minimum order', 'quantity', 'container', 'fcl', '20ft', '40ft'],
@@ -306,7 +327,7 @@ $(document).ready(function () {
           </form>
 
           <div class="chatbot-footer-brand">
-            Powered by <a href="index.html" target="_blank">Anuradha Coirs &amp; Fibres</a> South India
+            Powered by <a href="index.html" target="_blank">Anuradha Coirs</a> South India
           </div>
         </div>
       </div>
@@ -319,7 +340,7 @@ $(document).ready(function () {
   const KNOWLEDGE_BASE = [
     {
       keywords: ['hello', 'hi', 'hey', 'greetings', 'namaste', 'start', 'help'],
-      response: "Hello! Welcome to **Anuradha Coirs & Fibres** 🌱. We are a leading manufacturer and exporter of premium coco peat, coir fibre, grow bags & husk chips from South India. How can I assist you today?",
+      response: "Hello! Welcome to **Anuradha Coirs** 🌱. We are a leading manufacturer and exporter of premium coco peat, coir fibre, grow bags & husk chips from South India. How can I assist you today?",
       chips: ['❓ FAQ', '🌱 Select Products', '📦 MOQ & Export', '📜 Certifications', '📝 Get Instant Quote', '💬 Chat on WhatsApp']
     },
     {
@@ -349,8 +370,8 @@ $(document).ready(function () {
     },
     {
       keywords: ['about', 'history', 'founder', 'director', 'established', 'founded', 'company story', 'who are you', 'background'],
-      response: "🏛️ **About Anuradha Coir and Fibres**:\n\n" +
-        "Founded in 2016, **Anuradha Coir and Fibres** has completed nearly a decade of manufacturing excellence in premium coco peat products.\n\n" +
+      response: "🏛️ **About Anuradha Coirs**:\n\n" +
+        "Founded in 2016, **Anuradha Coirs** has completed nearly a decade of manufacturing excellence in premium coco peat products.\n\n" +
         "• **Leadership**: Founder **A. Aathi Ganesan**, Director **M. Karthikeyan**, and Co-Director **A. Anu Radha**.\n" +
         "• **Specialization**: 5kg coco peat blocks, 650g briquettes, husk chips, coir coins/discs, and grow bags.\n" +
         "• **Mission**: Providing sustainable, high-performance coir solutions for global agriculture & horticulture.",
@@ -391,7 +412,7 @@ $(document).ready(function () {
     },
     {
       keywords: ['contact', 'location', 'address', 'phone', 'email', 'factory', 'where'],
-      response: "📍 **Anuradha Coirs & Fibres**\n\n" +
+      response: "📍 **Anuradha Coirs**\n\n" +
         "• **Location**: South India (Tamil Nadu)\n" +
         "• **Email**: anuradhaexporters@gmail.com\n" +
         "• **India Phone / WhatsApp**: +91 99448 59177 / +91 89407 87924\n" +
@@ -569,7 +590,7 @@ $(document).ready(function () {
     const welcomeHtml = `
       <div class="cb-msg bot">
         <div class="cb-msg-bubble">
-          <strong>Welcome to Anuradha Coirs &amp; Fibres!</strong> 🌱<br><br>
+          <strong>Welcome to Anuradha Coirs!</strong> 🌱<br><br>
           We manufacture &amp; export premium <strong>Coco Peat, Coir Fibre, Grow Bags, Coconut Husk Chips &amp; Fresh Coconuts</strong> worldwide.<br><br>
           Select an option below to explore FAQs, products, specs, or our manufacturing process!
         </div>
