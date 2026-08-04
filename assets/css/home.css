@@ -1725,7 +1725,7 @@ body {
 
 /* MANUFACTURING */
 .mfg-section {
-    background: url(../images/Process/inspection.jpeg) center/cover no-repeat fixed;
+    background: url(../images/Process/blockMaking.jpeg) center/cover no-repeat fixed;
     position: relative;
     padding: 120px 0;
 }
@@ -3383,7 +3383,7 @@ textarea.form-input {
   height: 22px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  cursor: pointer;
+  cursor: default;
   z-index: 10;
   display: inline-flex;
   align-items: center;
