@@ -407,14 +407,21 @@ $(document).ready(function () {
     },
     {
       keywords: ['quote', 'price', 'cost', 'inquiry', 'enquiry', 'buy', 'sample'],
-      response: "We provide competitive direct manufacturer prices! You can fill out our quick quote form right here in the chat, select a product to inquire about, or talk to our export sales team on WhatsApp.",
-      chips: ['📝 Open Inquiry Form', '🌱 Select Products', '💬 Chat on WhatsApp', '📧 Email Inquiry']
+      response: "📍 **Anuradha Coirs**\n\n" +
+        "• **Location**: South India (Tamil Nadu)\n" +
+        "• **Enquiry Email**: info@anuradhacoirs.com\n" +
+        "• **Orders & Process**: exports@anuradhacoirs.com\n" +
+        "• **India Phone / WhatsApp**: +91 99448 59177 / +91 89407 87924\n" +
+        "• **UK Support**: +44 7466 435508\n" +
+        "• **US Support**: +1 (206) 391-9622\n" +
+        "• **Working Hours**: Monday – Saturday (9:00 AM – 7:00 PM IST)",
+      chips: ['🌱 Select Products', '📝 Get Instant Quote', '💬 Open WhatsApp', '📧 Email Us']
     },
     {
       keywords: ['contact', 'location', 'address', 'phone', 'email', 'factory', 'where'],
       response: "📍 **Anuradha Coirs**\n\n" +
         "• **Location**: South India (Tamil Nadu)\n" +
-        "• **Email**: anuradhaexporters@gmail.com\n" +
+        "• **Email**: info@anuradhacoirs.com\n" +
         "• **India Phone / WhatsApp**: +91 99448 59177 / +91 89407 87924\n" +
         "• **UK Support**: +44 7466 435508\n" +
         "• **US Support**: +1 (206) 391-9622\n" +
@@ -507,7 +514,7 @@ $(document).ready(function () {
     }
 
     if (chipText.includes('Email Inquiry') || chipText.includes('Email Us')) {
-      window.location.href = 'mailto:anuradhaexporters@gmail.com?subject=Product%20Inquiry%20-%20Anuradha%20Coirs';
+      window.location.href = 'mailto:info@anuradhacoirs.com?subject=Product%20Inquiry%20-%20Anuradha%20Coirs';
       return;
     }
 

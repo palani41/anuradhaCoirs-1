@@ -448,5 +448,149 @@ $(document).ready(function () {
       $('#noFaqResults').hide();
     }
   }
+
+  // ==========================================
+  // HOME CONTACT FORM SUBMISSION HANDLER
+  // ==========================================
+  const homeContactForm = document.getElementById('homeContactForm');
+  if (homeContactForm) {
+    const statusEl = document.getElementById('homeFormStatusMsg');
+    const submitBtn = document.getElementById('homeContactSubmitBtn');
+
+    homeContactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const firstName = document.getElementById('hcf-firstName')?.value.trim() || '';
+      const lastName = document.getElementById('hcf-lastName')?.value.trim() || '';
+      const fullName = (firstName + ' ' + lastName).trim();
+      const email = document.getElementById('hcf-email')?.value.trim() || '';
+      const phone = document.getElementById('hcf-phone')?.value.trim() || '';
+      const subject = document.getElementById('hcf-subject')?.value.trim() || 'New Website Inquiry - Anuradha Coirs';
+      const message = document.getElementById('hcf-message')?.value.trim() || '';
+
+      // Validate required fields
+      if (!firstName) {
+        showStatus('Please enter your first name.', 'error');
+        return;
+      }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showStatus('Please enter a valid email address.', 'error');
+        return;
+      }
+      if (!phone) {
+        showStatus('Please enter your contact phone number.', 'error');
+        return;
+      }
+      if (!message) {
+        showStatus('Please enter your message or inquiry requirements.', 'error');
+        return;
+      }
+
+      // UI Loading state
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Sending Message...`;
+      hideStatus();
+
+      const payload = {
+        name: fullName,
+        email: email,
+        phone: phone,
+        subject: subject,
+        message: message,
+        _subject: `New Inquiry from ${fullName} - Anuradha Coirs Website`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/info@anuradhacoirs.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && (result.success === 'true' || result.success === true || result.message)) {
+          showStatus(`
+            <div style="display:flex; align-items:flex-start; gap:10px;">
+              <i class="bi bi-check-circle-fill" style="font-size:1.4rem; color:#2e7d32; flex-shrink:0;"></i>
+              <div>
+                <strong style="font-size:0.95rem; color:#1b5e20; display:block; margin-bottom:3px;">Thank You, ${firstName}! Message Sent Successfully.</strong>
+                <span style="font-size:0.85rem; color:#2e7d32; line-height:1.4; display:block;">
+                  Your inquiry has been sent to <strong>info@anuradhacoirs.com</strong>. Our team will review your requirements and respond within 24 hours.
+                </span>
+              </div>
+            </div>
+          `, 'success');
+          homeContactForm.reset();
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.warn('Direct submission error, triggering fallback:', err);
+        const mailtoUrl = `mailto:info@anuradhacoirs.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+          `Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`
+        )}`;
+        const waUrl = `https://api.whatsapp.com/send?phone=919944859177&text=${encodeURIComponent(
+          `Hello Anuradha Coirs,\n\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`
+        )}`;
+
+        showStatus(`
+          <div style="font-size:0.88rem; color:#333;">
+            <div style="color:#b71c1c; font-weight:600; margin-bottom:6px;">
+              <i class="bi bi-info-circle-fill me-1"></i> Form submitted. Please click below to send via your preferred app:
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;">
+              <a href="${mailtoUrl}" class="btn btn-sm btn-outline-danger" style="font-size:0.82rem; font-weight:600; text-decoration:none;"><i class="bi bi-envelope-fill me-1"></i> Send via Email App</a>
+              <a href="${waUrl}" target="_blank" class="btn btn-sm btn-outline-success" style="font-size:0.82rem; font-weight:600; text-decoration:none;"><i class="bi bi-whatsapp me-1"></i> Send via WhatsApp</a>
+            </div>
+          </div>
+        `, 'warning');
+
+        // Trigger mailto client
+        window.location.href = mailtoUrl;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    });
+
+    function showStatus(html, type) {
+      if (!statusEl) return;
+      statusEl.style.display = 'block';
+      statusEl.style.padding = '12px 14px';
+      statusEl.style.borderRadius = '8px';
+      statusEl.style.marginTop = '12px';
+      statusEl.style.marginBottom = '12px';
+
+      if (type === 'success') {
+        statusEl.style.background = '#e8f5e9';
+        statusEl.style.border = '1px solid #a5d6a7';
+        statusEl.style.color = '#1b5e20';
+      } else if (type === 'error') {
+        statusEl.style.background = '#ffebee';
+        statusEl.style.border = '1px solid #ffcdd2';
+        statusEl.style.color = '#c62828';
+        statusEl.innerHTML = `<i class="bi bi-exclamation-triangle-fill me-1"></i> ${html}`;
+        return;
+      } else {
+        statusEl.style.background = '#fff8e1';
+        statusEl.style.border = '1px solid #ffe082';
+        statusEl.style.color = '#e65100';
+      }
+      statusEl.innerHTML = html;
+    }
+
+    function hideStatus() {
+      if (!statusEl) return;
+      statusEl.style.display = 'none';
+      statusEl.innerHTML = '';
+    }
+  }
 });
 

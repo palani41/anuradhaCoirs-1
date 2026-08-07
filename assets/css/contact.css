@@ -623,6 +623,13 @@
       min-height: 130px;
     }
 
+    .form-status-msg {
+      font-size: 0.9rem;
+      border-radius: 8px;
+      line-height: 1.5;
+      transition: all 0.3s ease;
+    }
+
     @media (max-width: 768px) {
       .contact-form-card {
         padding: 28px 20px;

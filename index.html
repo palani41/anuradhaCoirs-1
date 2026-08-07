@@ -46,7 +46,7 @@
       <div class="d-flex justify-content-between align-items-center">
         <div>
           <i class="bi bi-envelope-fill me-1" style="color:var(--gold);"></i>
-          <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+          <a href="mailto:info@anuradhacoirs.com">info@anuradhacoirs.com</a>
         </div>
         <div class="d-flex align-items-center gap-3">
           <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
@@ -1784,39 +1784,43 @@
             <div>
               <h2>Send Us a Message</h2>
               <p class="sub">Fill in the form below and our team will respond within 24 hours.</p>
-              <form>
+              <form id="homeContactForm" method="POST" action="https://formsubmit.co/info@anuradhacoirs.com">
+                <input type="hidden" name="_subject" value="New Website Inquiry - Anuradha Coirs">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
                 <div class="form-row">
                   <div class="form-group">
-                    <label class="form-label">First Name</label>
-                    <input type="text" name="firstName" class="form-input" placeholder="John">
+                    <label class="form-label" for="hcf-firstName">First Name <span style="color:#d32f2f;">*</span></label>
+                    <input type="text" id="hcf-firstName" name="firstName" class="form-input" placeholder="John" required>
                   </div>
                   <div class="form-group">
-                    <label class="form-label">Last Name</label>
-                    <input type="text" name="lastName" class="form-input" placeholder="Smith">
+                    <label class="form-label" for="hcf-lastName">Last Name</label>
+                    <input type="text" id="hcf-lastName" name="lastName" class="form-input" placeholder="Smith">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group">
-                    <label class="form-label">Email Address</label>
-                    <input type="email" name="email" class="form-input" placeholder="john@example.com">
+                    <label class="form-label" for="hcf-email">Email Address <span style="color:#d32f2f;">*</span></label>
+                    <input type="email" id="hcf-email" name="email" class="form-input" placeholder="john@example.com" required>
                   </div>
                   <div class="form-group">
-                    <label class="form-label">Phone Number</label>
-                    <input type="tel" name="phone" class="form-input" placeholder="+1 234 567 8900">
+                    <label class="form-label" for="hcf-phone">Phone Number <span style="color:#d32f2f;">*</span></label>
+                    <input type="tel" id="hcf-phone" name="phone" class="form-input" placeholder="+1 234 567 8900" required>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Subject</label>
-                  <input type="text" name="subject" class="form-input" placeholder="Product enquiry / Quote request…">
+                  <label class="form-label" for="hcf-subject">Subject</label>
+                  <input type="text" id="hcf-subject" name="subject" class="form-input" placeholder="Product enquiry / Quote request…">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Message</label>
-                  <textarea name="message" class="form-input" placeholder="Tell us about your requirements…"
-                    style="min-height:110px;"></textarea>
+                  <label class="form-label" for="hcf-message">Message <span style="color:#d32f2f;">*</span></label>
+                  <textarea id="hcf-message" name="message" class="form-input" placeholder="Tell us about your requirements…"
+                    style="min-height:110px;" required></textarea>
                 </div>
-                <button type="submit" class="btn-primary-coir"
+                <div id="homeFormStatusMsg" class="form-status-msg" style="display:none; margin-bottom: 12px;"></div>
+                <button type="submit" id="homeContactSubmitBtn" class="btn-primary-coir"
                   style="width:100%;justify-content:center;margin-top:6px;font-size:0.9rem;padding:14px;">
-                  Send Message <i class="bi bi-send-fill ms-1"></i>
+                  <span class="btn-text">Send Message</span> <i class="bi bi-send-fill ms-1"></i>
                 </button>
               </form>
             </div>
@@ -1836,14 +1840,16 @@
                 <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
                 <div>
                   <span class="info-text-label">India Office</span>
-                  <span class="info-text-val">212/6B Krishnapuram Main Road, Nilakkottai,<br>Dindigul, Tamilnadu –
-                    624219</span>
+                  <span class="info-text-val"><a
+                      href="https://www.google.com/maps?q=10%C2%B005'48.7%22N+77%C2%B055'40.6%22E" target="_blank"
+                      style="color:inherit;">212/6B Krishnapuram Main Road, Nilakkottai,<br>Dindigul, Tamilnadu –
+                      624219</a></span>
                 </div>
               </div>
               <div class="info-item">
                 <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
                 <div>
-                  <span class="info-text-label">Phone</span>
+                  <span class="info-text-label">India Phone</span>
                   <span class="info-text-val">
                     <a href="tel:+918940787924">+91 89407 87924</a><br>
                     <a href="tel:+919944859177">+91 99448 59177</a><br>
@@ -1855,8 +1861,10 @@
                 <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
                 <div>
                   <span class="info-text-label">Email</span>
-                  <span class="info-text-val"><a
-                      href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a></span>
+                  <span class="info-text-val">
+                    <a href="mailto:info@anuradhacoirs.com">info@anuradhacoirs.com</a> (Enquiry)<br>
+                    <a href="mailto:exports@anuradhacoirs.com">exports@anuradhacoirs.com</a> (Orders &amp; Process)
+                  </span>
                 </div>
               </div>
 
@@ -2134,8 +2142,7 @@
         <div class="col-12 col-md-4 footer-brand">
           <img src="assets/images/logo/footerlogo.png" alt="Anuradha Coirs" style="border-radius: 8px;max-width:250px;"
             loading="lazy">
-          <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India. Serving 500+
-            clients across 50+ countries worldwide.</p>
+          <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India. Serving 100+ clients across 10+ countries worldwide.</p>
         </div>
 
         <div class="col-6 col-md-2">
@@ -2168,7 +2175,11 @@
           </div>
           <div class="footer-info-item">
             <i class="bi bi-envelope-fill"></i>
-            <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+            <a href="mailto:info@anuradhacoirs.com">info@anuradhacoirs.com</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:exports@anuradhacoirs.com">exports@anuradhacoirs.com</a>
           </div>
         </div>
 
@@ -2184,7 +2195,7 @@
           </div>
           <div class="footer-info-item">
             <i class="bi bi-envelope-fill"></i>
-            <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+            <a href="mailto:info@anuradhacoirs.com">info@anuradhacoirs.com</a>
           </div>
         </div>
 
@@ -2202,7 +2213,7 @@
             title="Instagram"><i class="bi bi-instagram"></i></a>
           <!-- <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i
               class="bi bi-youtube"></i></a> -->
-          <a href="mailto:anuradhaexporters@gmail.com" class="social-link" title="Email"><i
+          <a href="mailto:info@anuradhacoirs.com" class="social-link" title="Email"><i
               class="bi bi-envelope-fill"></i></a>
         </div>
       </div>

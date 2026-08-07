@@ -2631,7 +2631,14 @@ body {
 
 textarea.form-input {
     resize: vertical;
-    min-height: 120px;
+    min-height: 110px;
+}
+
+.form-status-msg {
+    font-size: 0.9rem;
+    border-radius: 8px;
+    line-height: 1.5;
+    transition: all 0.3s ease;
 }
 
 .contact-info-panel {

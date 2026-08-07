@@ -43,9 +43,7 @@
       <div class="d-flex justify-content-between align-items-center">
         <div>
           <i class="bi bi-envelope-fill me-1" style="color:var(--gold);"></i>
-          <a href="/cdn-cgi/l/email-protection#fb92959d94bb9a958e899a9f939a98949289889d9299899e88d5989496"><span
-              class="__cf_email__"
-              data-cfemail="345d5a525b74555a414655505c55575b5d4647525d564651471a575b59">anuradhaexporters@gmail.com</span></a>
+          <a href="mailto:info@anuradhacoirs.com">info@anuradhacoirs.com</a>
         </div>
         <div class="d-flex align-items-center gap-3">
           <a href="https://api.whatsapp.com/send?phone=919944859177&text=Hi!%20I%20have%20a%20query%20about%20your%20coir%20products."
@@ -294,9 +292,8 @@
               <a href="tel:+918940787924">+91 89407 87924</a><br>
               <a href="tel:+447466435508">+44 7466 435508</a> (UK Support)<br>
               <a href="tel:+12063919622">+1 (206) 391-9622</a> (US Support)<br>
-              <a href="/cdn-cgi/l/email-protection#8de4e3ebe2cdece3f8ffece9e5eceee2e4fffeebe4efffe8fea3eee2e0"><span
-                  class="__cf_email__"
-                  data-cfemail="9bf2f5fdf4dbfaf5eee9fafff3faf8f4f2e9e8fdf2f9e9fee8b5f8f4f6">anuradhaexporters@gmail.com</span></a>
+              <a href="mailto:info@anuradhacoirs.com">info@anuradhacoirs.com</a> (Enquiry)<br>
+              <a href="mailto:exports@anuradhacoirs.com">exports@anuradhacoirs.com</a> (Orders &amp; Process)
             </p>
           </div>
         </div>
@@ -323,38 +320,42 @@
           <div class="contact-form-card">
             <h2>Send Us a Message</h2>
             <p class="sub">Fill in the form below and our team will respond within 24 hours.</p>
-            <form>
+            <form id="contactForm" method="POST" action="https://formsubmit.co/info@anuradhacoirs.com">
+              <input type="hidden" name="_subject" value="New Website Inquiry - Anuradha Coirs">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
               <div class="form-row-2">
                 <div class="form-group">
-                  <label class="form-label">First Name</label>
-                  <input type="text" name="firstName" class="form-input" placeholder="John">
+                  <label class="form-label" for="cf-firstName">First Name <span style="color:#d32f2f;">*</span></label>
+                  <input type="text" id="cf-firstName" name="firstName" class="form-input" placeholder="John" required>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Last Name</label>
-                  <input type="text" name="lastName" class="form-input" placeholder="Smith">
+                  <label class="form-label" for="cf-lastName">Last Name</label>
+                  <input type="text" id="cf-lastName" name="lastName" class="form-input" placeholder="Smith">
                 </div>
               </div>
               <div class="form-row-2">
                 <div class="form-group">
-                  <label class="form-label">Email Address</label>
-                  <input type="email" name="email" class="form-input" placeholder="john@example.com">
+                  <label class="form-label" for="cf-email">Email Address <span style="color:#d32f2f;">*</span></label>
+                  <input type="email" id="cf-email" name="email" class="form-input" placeholder="john@example.com" required>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Phone Number</label>
-                  <input type="tel" name="phone" class="form-input" placeholder="+1 234 567 8900">
+                  <label class="form-label" for="cf-phone">Phone Number <span style="color:#d32f2f;">*</span></label>
+                  <input type="tel" id="cf-phone" name="phone" class="form-input" placeholder="+1 234 567 8900" required>
                 </div>
               </div>
               <div class="form-group">
-                <label class="form-label">Subject</label>
-                <input type="text" name="subject" class="form-input" placeholder="Product enquiry / Quote request…">
+                <label class="form-label" for="cf-subject">Subject</label>
+                <input type="text" id="cf-subject" name="subject" class="form-input" placeholder="Product enquiry / Quote request…">
               </div>
               <div class="form-group">
-                <label class="form-label">Message</label>
-                <textarea name="message" class="form-input" placeholder="Tell us about your requirements…"></textarea>
+                <label class="form-label" for="cf-message">Message <span style="color:#d32f2f;">*</span></label>
+                <textarea id="cf-message" name="message" class="form-input" placeholder="Tell us about your requirements…" required></textarea>
               </div>
-              <button type="submit" class="btn-primary-coir"
+              <div id="formStatusMsg" class="form-status-msg" style="display:none; margin-bottom: 12px;"></div>
+              <button type="submit" id="contactSubmitBtn" class="btn-primary-coir"
                 style="width:100%;justify-content:center;margin-top:4px;font-size:0.88rem;padding:14px;">
-                Send Message <i class="bi bi-send-fill"></i>
+                <span class="btn-text">Send Message</span> <i class="bi bi-send-fill ms-1"></i>
               </button>
             </form>
           </div>
@@ -391,10 +392,10 @@
               <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
               <div>
                 <span class="info-text-label">Email</span>
-                <span class="info-text-val"><a
-                    href="/cdn-cgi/l/email-protection#7c15121a133c1d12090e1d18141d1f13150e0f1a151e0e190f521f1311"><span
-                      class="__cf_email__"
-                      data-cfemail="01686f676e41606f747360656960626e6873726768637364722f626e6c">anuradhaexporters@gmail.com</span></a></span>
+                <span class="info-text-val">
+                  <a href="mailto:info@anuradhacoirs.com">info@anuradhacoirs.com</a> (Enquiry)<br>
+                  <a href="mailto:exports@anuradhacoirs.com">exports@anuradhacoirs.com</a> (Orders &amp; Process)
+                </span>
               </div>
             </div>
 
@@ -495,8 +496,7 @@
         <div class="col-12 col-md-4 footer-brand">
           <img src="assets/images/logo/footerlogo.png" alt="Anuradha Coirs" style="border-radius: 8px;max-width:250px;"
             loading="lazy">
-          <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India. Serving 500+
-            clients across 50+ countries worldwide.</p>
+          <p>Trusted manufacturer &amp; exporter of premium coir and coconut products from South India. Serving 100+ clients across 10+ countries worldwide.</p>
         </div>
 
         <div class="col-6 col-md-2">
@@ -529,7 +529,11 @@
           </div>
           <div class="footer-info-item">
             <i class="bi bi-envelope-fill"></i>
-            <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+            <a href="mailto:info@anuradhacoirs.com">info@anuradhacoirs.com</a>
+          </div>
+          <div class="footer-info-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:exports@anuradhacoirs.com">exports@anuradhacoirs.com</a>
           </div>
         </div>
 
@@ -545,7 +549,7 @@
           </div>
           <div class="footer-info-item">
             <i class="bi bi-envelope-fill"></i>
-            <a href="mailto:anuradhaexporters@gmail.com">anuradhaexporters@gmail.com</a>
+            <a href="mailto:info@anuradhacoirs.com">info@anuradhacoirs.com</a>
           </div>
         </div>
 
@@ -564,7 +568,7 @@
             title="Instagram"><i class="bi bi-instagram"></i></a>
           <!-- <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube"><i
               class="bi bi-youtube"></i></a> -->
-          <a href="mailto:anuradhaexporters@gmail.com" class="social-link" title="Email"><i
+          <a href="mailto:info@anuradhacoirs.com" class="social-link" title="Email"><i
               class="bi bi-envelope-fill"></i></a>
         </div>
       </div>
